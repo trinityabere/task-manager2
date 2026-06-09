@@ -29,8 +29,9 @@ def main():
             print(mark_task_as_complete(index))
 
         elif choice == "3":
-            for task in view_pending_tasks():
-                print(task)
+            tasks = view_pending_tasks()
+            for t in tasks:
+                print(t)
 
         elif choice == "4":
             progress = calculate_progress()
