@@ -5,7 +5,6 @@ from task_utils import (
     calculate_progress
 )
 
-
 def main():
     while True:
         print("\nTask Management System")
@@ -21,14 +20,17 @@ def main():
             title = input("Title: ")
             description = input("Description: ")
             due_date = input("Due date (YYYY-MM-DD): ")
-            add_task(title, description, due_date)
+            priority = int(input("Priority (1-5): "))
+
+            print(add_task(title, description, due_date, priority))
 
         elif choice == "2":
             index = int(input("Enter task index: "))
-            mark_task_as_complete(index)
+            print(mark_task_as_complete(index))
 
         elif choice == "3":
-            view_pending_tasks()
+            for task in view_pending_tasks():
+                print(task)
 
         elif choice == "4":
             progress = calculate_progress()
